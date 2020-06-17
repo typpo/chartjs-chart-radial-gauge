@@ -290,7 +290,12 @@ export default Chart => {
       const value = this.getMetricValue();
       const domainSize = domainEnd - domainStart;
 
-      return domainSize > 0 ? Math.PI * 2.0 * (Math.abs(value - domainStart) / domainSize) : 0;
+      let arcRatio = Math.abs(value - domainStart) / domainSize;
+      if (arcRatio > 1) {
+        arcRatio = 1 + (arcRatio - Math.floor(arcRatio));
+      }
+
+      return domainSize > 0 ? Math.PI * 2.0 * arcRatio : 0;
     },
 
     // gets the max border or hover width to properly scale pie charts
