@@ -49,7 +49,6 @@
     "prebuild": "yarn clean && yarn test",
     "build": "yarn build:prod",
     "preversion": "yarn test",
-    "prepare": "yarn build:dev",
     "prepublishOnly": "yarn build:prod",
     "release:major": "yarn version major && yarn publish && git push --follow-tags",
     "release:minor": "yarn version minor && yarn publish && git push --follow-tags",
