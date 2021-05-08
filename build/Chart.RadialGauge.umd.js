@@ -402,7 +402,7 @@
       },
       getMetricValue: function getMetricValue() {
         var value = this.getDataset().data[0];
-        if (value == null) {
+        if (value == null || Number.isNaN(value)) {
           value = this.chart.options.domain[0];
         }
 
