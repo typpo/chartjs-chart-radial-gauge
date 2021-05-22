@@ -109,6 +109,10 @@ export default Chart => {
     },
 
     drawCenterArea() {
+      if (!this.getMeta().data[0]) {
+        return;
+      }
+
       const ctx = this.chart.ctx;
       const drawInfo = {
         ctx,

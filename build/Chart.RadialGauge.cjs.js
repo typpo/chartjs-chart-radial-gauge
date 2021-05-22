@@ -204,6 +204,10 @@ var RadialGaugeController = (function (Chart$$1) {
       }).draw();
     },
     drawCenterArea: function drawCenterArea() {
+      if (!this.getMeta().data[0]) {
+        return;
+      }
+
       var ctx = this.chart.ctx;
       var drawInfo = {
         ctx: ctx,

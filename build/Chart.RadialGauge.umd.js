@@ -205,6 +205,10 @@
         }).draw();
       },
       drawCenterArea: function drawCenterArea() {
+        if (!this.getMeta().data[0]) {
+          return;
+        }
+
         var ctx = this.chart.ctx;
         var drawInfo = {
           ctx: ctx,
